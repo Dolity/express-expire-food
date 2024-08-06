@@ -8,7 +8,7 @@ const auth = require("../middlewares/authToken.js")
 
 const userRouter = express.Router();
 
-userRouter.get("/user/health", auth, userController.getUserHealth);
+userRouter.get("/user/health", userController.getUserHealth);
 
 userRouter.post("/user-register",
     [

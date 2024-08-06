@@ -1,6 +1,8 @@
 const express = require("express");
 
 const foodController = require("../controllers/food/foodController.js");
+const auth = require("../middlewares/authToken.js")
+
 
 const foodRouter = express.Router();
 
