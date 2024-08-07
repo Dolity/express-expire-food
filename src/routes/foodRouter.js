@@ -12,4 +12,8 @@ foodRouter.post("/food-add", foodController.postFoodAdd);
 
 foodRouter.get("/foods", foodController.getFoods);
 
+foodRouter.put("/food-update/:id", foodController.putFoodUpdate);
+
+foodRouter.delete("/food-delete/:id", foodController.deleteFood);
+
 module.exports = foodRouter;
