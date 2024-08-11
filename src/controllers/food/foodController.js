@@ -1,3 +1,5 @@
+const moment = require("moment");
+
 const { Food } = require("../../models");
 const logger = require("../../helpers/logger");
 
@@ -6,14 +8,15 @@ const getFoodHealth = (req, res) => {
 };
 
 const postFoodAdd = async (req, res) => {
-  const { name, category, mfgDate, expDate } = req.body;
+  const { name, category, manufacture_date, expiration_date } = req.body;
+
 
   try {
     const foodResult = await Food.create({
       name: name,
       category: category,
-      manufacture_date: mfgDate,
-      expiration_date: expDate,
+      manufacture_date: manufacture_date,
+      expiration_date: expiration_date,
     });
   
     return res

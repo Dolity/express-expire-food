@@ -76,6 +76,12 @@ const getUserLogin = async (req, res) => {
       expiresIn: "1d"
     })
 
+    await UserAuth.update(
+      { last_login: new Date() },
+      { where: { id: user.id } }
+    );
+    
+
     return res.status(200).json({ message: "User logged in successfully", token, user });
   } catch (error) {
     return res.status(500).json({ message: "Internal server error!", error: error });
